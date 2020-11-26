@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log In Form Layout</title>
+	<style>
+	
+    body {
+			margin:0;
+			padding:0;
+		}
+
+		#topBar {
+			background-color:#e2e2e2;
+			height: 135px;
+		}
+
+		.topBarContent {
+			max-width:900px;
+            margin:0 auto;
+            display:block;
+            text-align: left;
+            padding-top: 45px;
+			height: 100%;
+		}
+
+		.contactUs {
+            font-family: Verdana, sans-serif;
+			color:#383838;
+            font-weight: lighter;
+            font-size: 3em;	
+		}
+
+        .feelFree {
+            font-family: Verdana,sans-serif;
+            color:#707070;
+            font-weight: lighter;
+            font-size: 2em;	
+        }
+
+        #form {
+			background-color:rgb(240, 240, 240);
+			overflow:auto;
+            border-radius: 5px;
+            max-width:600px;
+            margin:0 auto;
+			display: flex;
+            justify-content: space-between;
+			height: 100%;
+            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 0.7%;
+            padding-bottom:1.8%;
+            margin-top: 2%;
+		}
+		
+		.loginFormLeft {
+			display:grid;
+            grid-template-rows: 1fr 1fr 1fr;
+			row-gap: 20px;
+		}
+
+        .loginFormRight {
+			display:grid;
+            grid-template-rows: 1fr;
+            row-gap: 2px;
+        }
+
+		.loginFormLeft label {
+			color:#383838;
+            font-weight: bold;
+            font-family: Verdana, sans-serif;
+            font-size: 0.8em;
+		}
+
+        .loginFormRight label {
+			color:#383838;
+            font-weight: bold;
+            font-family: Verdana, sans-serif;
+            font-size: 0.8em;
+		}
+		
+		.sendMessage {
+			border:1px solid #17223b;
+			background-color: #476bb6;
+			color:white;
+			padding: 5px 10px;
+            float: right;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+
+        .sendMessage:hover {
+		    cursor: pointer;
+		}
+
+        .pageContent {
+            background-color: white;
+        }
+
+        .footerContent {
+            background-color: white;
+        }
+
+        #socialMedia {
+            background-color:white);
+            max-width:350px;
+            margin:0 auto;
+            padding: 10px;
+            text-align: center;
+            font-family: Verdana, sans-serif;
+        }
+
+        .lineSocial {
+            margin-top: 0;
+            padding-top:0;
+        }
+
+        .socialText {
+            margin-bottom: 0.5%;
+        }
+
+        .socialMediaLinks {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+        }
+
+        .leftSide {
+            height:200px;
+            padding-right: 20px;
+        }
+
+        .rightSide {
+            height:200px;
+        }
+
+        .nameRow {
+            display:grid;
+            grid-template-rows: 1fr;
+			row-gap: 3%;
+        }
+
+        .emailRow {
+            display:grid;
+            grid-template-rows: 1fr;
+			row-gap: 3%;
+        }
+
+        .subjectRow {
+            display:grid;
+            grid-template-rows: 1fr;
+			row-gap: 3%;
+        }
+
+        .loginContainer input {
+            padding:5px;
+            font-family: Verdana, sans-serif;
+            font-size: 0.75em;
+        }
+
+        .messageBox {
+            display: border-box;
+            padding:5px;
+            font-family: Verdana, sans-serif;
+            font-size: 0.75em;
+        }
+
+	</style>
+</head>
+<body>
+    <header id="topBar">
+		<div class="topBarContent">
+            <span class="contactUs">Contact us</span>
+            <span class="feelFree">Feel free to contact us</span>
+        </div>
+    </header>
+	<section class="pageContent">
+        <div id="form">
+            <div class="leftSide">
+                <div class="loginContainer">
+                    <form class="loginFormLeft">
+                        <div class="nameRow">
+                            <label for="Name">Name</label>
+                            <input id="name" type="text" placeholder="Enter name" />
+                        </div>
+                        <div class="emailRow">
+                            <label for="email">Email</label>
+                            <input id="email" type="text" placeholder="Enter email"/>
+                        </div>
+                        <div class="subjectRow">
+                            <label for="subject">Subject</label>
+                            <input id="subject" type="text" placeholder="Enter subject" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="rightSide">
+                <form class="loginFormRight">
+                    <label for="message">Message</label>
+                    <textarea class="messageBox"; placeholder="Message"; rows="10"></textarea>
+                </form>
+                <input type="submit" class="sendMessage" value="Send Message"/>
+            </div>
+        </div>
+    </section>	
+    <footer class="footerContent">
+        <div id="socialMedia">
+            <h3 class="socialText" style="font-family: Verdana, sans-serif; font-weight: lighter;">Or find us on social media</h3>
+            <hr class="lineSocial" />
+            <div class="socialMediaLinks">
+                <a href="https://en.wikipedia.org/wiki/Facebook" style="text-decoration: none; color:#476bb6;">Facebook</a>
+                <a href="https://en.wikipedia.org/wiki/Twitter" style="text-decoration: none; color:#476bb6;">Twitter</a>
+                <a href="https://en.wikipedia.org/wiki/Instagram" style="text-decoration: none; color:#476bb6;">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

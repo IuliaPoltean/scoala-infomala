@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modal layout</title>
+	<style>
+		.modal{
+			position:fixed;
+			background-color:white;
+			width:320px;
+			height:220px;
+			top:50%;
+			left:50%;
+			margin-left:-150px;
+			margin-top: -100px;
+			z-index:100;
+			overflow:auto;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+		}
+
+		.modalWithBackdrop{
+			z-index:99;
+			position:absolute;
+			top:0;
+			left:0;
+			bottom:0;
+			right:0;
+			background-color: rgba(0,0,0, 0.1);
+			display:flex;
+			flex-direction:column;
+			overflow:auto;
+			justify-content:center;
+			align-items:center;
+		}
+
+        .xBtn {
+            height: 15px;
+            width: 2px;
+            margin-left: 180px;
+            background-color: black;
+            transform: rotate(45deg);
+            Z-index: 1;
+			float: right;
+        }
+
+        .xB {
+            height: 15px;
+            width: 2px;
+            background-color: black;
+            transform: rotate(90deg);
+			float: right;
+        }
+
+		#modalContent {
+			max-width:280px;
+			margin:0 auto;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			display: grid;
+			grid-template-rows: 25% 45% 45%;
+			row-gap: 40%;	
+		}
+
+		.modalTitle {
+			font-family: Arial;
+			font-weight: bold;
+			font-size: large;
+		}
+
+		.buttons {
+			margin-left: auto;
+		}
+		
+		.submitBtn {
+			background-color: #5852d5;
+			font-family: Arial, sans-serif;
+			font-weight: bold;
+			border-radius: 2px;
+			padding: 7px 10px;
+			color: white;
+			border:none;
+		}
+
+		.submitBtn:hover {
+		cursor: pointer;
+		}
+		
+		.closeBtn {
+			background-color: white;
+			font-family: Arial, sans-serif;
+			font-weight: bold;
+			border-radius: 2px;
+			padding: 7px 10px;
+			color: #5852d5;
+			border:none;
+		}
+		
+		.labelName {
+			font-family: Arial, sans-serif;
+			font-size: 1em;
+			font-weight: bold;
+			color:rgba(10, 10, 10, 0.863)
+		}
+
+	</style>
+</head>
+<body>
+	<div class="modal">
+		<div id="modalContent">
+			<div style="display:flex;">
+				<div class="modalTitle">Modal title</div>
+				<div class="xBtn">
+					<div class="xB"></div>
+				</div>
+			</div>
+			<div class="loginContainer">
+				<form class="loginForm">
+				<label class="labelName" for="name"> Name</label>
+				<input type="text" placeholder="Name" style="width:100%;box-sizing: border-box; margin-top: 5px; font-size: 1em; padding: 5px" />
+				</form>
+			</div>
+			<div class="buttons">
+				<button class="submitBtn" type="submit">Submit</button>
+				<button class="closeBtn" type="close">Close</button>
+			</div>
+		</div>
+	</div>
+	<div style="position:relative;height:1200px;">
+		<div class="modalWithBackdrop"></div>
+	</div>
+	
+    
+</body>
+</html>
