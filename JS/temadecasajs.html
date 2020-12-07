@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tema JavaScript Part 1</title>
+
+    <script>
+        //tema 1: O functie "equals" care primeste 2 parametrii si returneaza daca cei 2 parametrii sunt egali, strict
+
+        function equals(a, b) {
+            if (a === b) {
+                return (a === b);
+            }
+            else {
+                return false;
+            }
+        }
+        console.log("1equals5,5", equals(5, 5));
+        console.log("1equals1,1", equals(1, 1));
+        console.log("1equals12,25", equals(15, 25));
+
+
+        //tema 2: O functie "compare" care primeste 2 parametrii si returneaza -1 daca primul e mai mic ca al doilea,
+        //        0 daca sunt egale si 1 daca primul e mai mare ca al doilea
+
+        function compare(a, b) {
+            if (a < b) {
+                return (-1);
+            }
+            if (a > b) {
+                return (1);
+            }
+            if (a = b) {
+                return (0);
+            }
+
+        }
+        console.log("2compare1,5", compare(1, 5));
+        console.log("2compare1,1", compare(1, 1));
+        console.log("2compare15,10", compare(15, 10));
+
+
+        //tema 3: O functie "max" care primeste 2 parametrii si returneaza maximul dintre cele 2
+
+        function max(a, b) {
+            if (a > b) {
+                return a;
+            }
+            if (b > a) {
+                return b;
+            }
+            if (a = b) {
+                return "equal";
+            }
+        }
+        console.log("3max", max(1, 5));
+        console.log("3max", max(1, 1));
+        console.log("3max", max(15, 10));
+
+
+        //tema 4: O functie "min" care primeste 2 parametrii si returneaza minimul dintre cele 2
+
+        function min(a, b) {
+            if (a > b) {
+                return b;
+            }
+            if (b > a) {
+                return a;
+            }
+            if (a = b) {
+                return "equal";
+            }
+        }
+        console.log("4min", min(1, 5));
+        console.log("4min", min(1, 1));
+        console.log("4min", min(15, 10));
+
+
+        //tema 5: O functie "suma" care primeste 1 parametru, numar intreg si returneaza
+        //        suma primelor N numere naturale pozitive (exemplu: daca N este 3, trebuie sa returneze 6)
+
+        function suma(N) {
+            var i = 0
+            var sum = 0
+            for (var i = 0; i <= N; i++) {
+                var sum = sum + i;
+            } return sum;
+
+        }
+
+        console.log("5suma", suma(3));
+        console.log("5suma", suma(6));
+        console.log("5suma", suma(5));
+
+
+        //tema 6: O functie "prim" care primeste 1 parametru si returneaza true/false daca N este numar prim
+        //        sau nu (restul impartirii la 1 si la N ==0)
+
+        function prim(N) {
+
+            for (var i = 2; i < N; i++) {
+                if (N % i === 0 && N % N === 0)
+                    return false;
+            }
+            return true;
+        }
+
+        console.log("6prim2", prim(2));
+        console.log("6prim5", prim(5));
+        console.log("6prim21", prim(21));
+
+        //tema 7: O functie "sumaPrime" care primeste 1 parametru si returneaza suma primelor N numere prime
+        //       (pentru N=5 trebuie sa returneze 2+3+5+7+11=28)
+
+        function sumaPrime(n) {
+            let sum = 0;
+            let sumPrim = 0;
+            for (let i = 2; sumPrim < n; i++) {
+                if (prim(i)) {
+                    sum += i;
+                    sumPrim += 1;
+                }
+            }
+            return sum;
+        }
+
+        console.log("7sumaPrime", sumaPrime(5));
+        console.log("7sumaPrime", sumaPrime(10));
+        console.log("7sumaPrime", sumaPrime(3));
+
+
+        //tema 8: O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321)
+
+        function invers(str) {
+            let strInvers = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                strInvers += str[i];
+            }
+            return strInvers;
+        }
+
+        console.log("8invers123", invers("123"));
+        console.log("8invers456", invers("456"));
+        console.log("8invers789", invers("789"));
+
+
+        //tema 9: O functie "produsImpare" care primeste 1 parametru si returneaza produsul primelor N numere impare pozitive
+        //       (pentru N=5; returneaza 1*3*5*7*9=945)
+
+        function produsImpare(n) {
+            let impar = [];
+            for (let i = 1; impar.length <= n - 1; i++) {
+                if (i % 2 !== 0) {
+                    impar.push(i);
+                }
+            }
+            let p = 1;
+            for (let j = 0; j < impar.length; j++) {
+                p *= impar[j];
+            }
+            return p;
+        }
+
+        console.log("9produsImpar", produsImpare(5));
+        console.log("9produsImpar", produsImpare(3));
+        console.log("9produsImpar", produsImpare(8));
+
+        //tema 10: O functie "contains" care primeste 2 parametri(arr - array de nr intregi si x - numar) si 
+        //         verifica daca x exista in array (rezultatul este true/false)
+
+        function contains(arr, x) {
+            for (var i = 0; i < arr.length; i++)
+                if (arr[i] === x) {
+                    return true;
+                }
+            return false
+        }
+
+        console.log("10constains", contains([1, 2, 3, 4, 5], 1));
+        console.log("10constains", contains([6, 7, 8, 9, 10], 15));
+        console.log("10constains", contains([11, 12, 0.1, 0.2, 0.3], 0.1));
+
+        //tema 11: O functie "maxArray" care primeste un array si returneaza valoarea maxima
+        //        (ar trebui sa functioneze si pentru numere si pentru stringuri)
+
+        function maxArray(arr) {
+            let max = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+        console.log("11maxArray", maxArray([1, 2, 3, 4, 5]));
+        console.log("11maxArray", maxArray([152, 2, 3375, 4, 534]));
+        console.log("11maxArray", maxArray(["152", "2", "3375", "4", "534"]));
+
+        //tema 12: O functie "sumMinMax" care primeste un array de numere si returneaza suma dintre
+        //         valoare maxima si valoare minima
+
+        function sumMinMax(arr) {
+            let min = arr[0];
+            let max = arr[0];
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (min > arr[i]) {
+                    min = arr[i];
+                }
+                if (max < arr[i]) {
+                    max = arr[i];
+                }
+            }
+            let s = min + max;
+            return s;
+        }
+
+        console.log("12sumMinMax", sumMinMax([1, 5, 10]));
+        console.log("12sumMinMax", sumMinMax([1, 2, 3, 4, 5, 6, 7, 8, , 9, 10]));
+        console.log("12sumMinMax", sumMinMax([1.5, 2, 3, 4, 53, 6, 7.8, 8, , 75, 10]));
+
+        //tema 13: O functie "hasDuplicates" care primeste un array si returneaza daca exista 
+        //         duplicate intr-un array primit ca parametru (true/false)
+
+        function hasDuplicates(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] === arr[j]) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        console.log("13hasDuplicates", hasDuplicates([1, 2, 3, 4, 5]));
+        console.log("13hasDuplicates", hasDuplicates([1, 2, 3, 4, 5, 1]));
+        console.log("13hasDuplicates", hasDuplicates([1, 2, 3, 4, 5, 1, 2]));
+
+        //tema 14: O functie "produsPozitive" care primeste un array si returneaza produsul numerelor pozitive
+        //         intr-un array primit ca parametru
+
+        function produsPozitive(arr) {
+            let produs = 1;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > 0) {
+                    produs *= arr[i];
+                }
+            }
+            return produs;
+        }
+
+        console.log("14produsPozitive", produsPozitive([1, 2, 3, 4, 5]));
+        console.log("14produsPozitive", produsPozitive([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+        console.log("14produsPozitive", produsPozitive([5, 4, 5]));
+
+        //tema 15: O functie "palindrom" care primeste un string si returneaza daca este palindrom 
+        //        (inversul == originalul, ex: "1234321", "55", "787") (true/false)
+
+        function palindrom(str) {
+            return str === invers(str);
+        }
+
+        console.log("15palindrom", palindrom("121"));
+        console.log("15palindrom", palindrom("1211"));
+        console.log("15palindrom", palindrom("apa"));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
