@@ -50,7 +50,7 @@
                 return b;
             }
             if (a = b) {
-                return "equal";
+                return a;
             }
         }
         console.log("3max", max(1, 5));
@@ -68,7 +68,7 @@
                 return a;
             }
             if (a = b) {
-                return "equal";
+                return a;
             }
         }
         console.log("4min", min(1, 5));
@@ -131,32 +131,30 @@
 
         //tema 8: O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321)
 
-        function invers(str) {
-            let strInvers = "";
-            for (let i = str.length - 1; i >= 0; i--) {
-                strInvers += str[i];
+        function invers(n) {
+            let j = 0;
+            for (let i = 0; n > 0; i++) {
+                j = j * 10 + n % 10;
+                n = Math.floor(n / 10);
             }
-            return strInvers;
+            return j;
         }
 
         console.log("8invers123", invers("123"));
         console.log("8invers456", invers("456"));
         console.log("8invers789", invers("789"));
 
-
         //tema 9: O functie "produsImpare" care primeste 1 parametru si returneaza produsul primelor N numere impare pozitive
         //       (pentru N=5; returneaza 1*3*5*7*9=945)
 
         function produsImpare(n) {
-            let impar = [];
-            for (let i = 1; impar.length <= n - 1; i++) {
-                if (i % 2 !== 0) {
-                    impar.push(i);
-                }
-            }
             let p = 1;
-            for (let j = 0; j < impar.length; j++) {
-                p *= impar[j];
+            let numImpare = 0;
+            for (let i = 0; numImpare < n; i++) {
+                if (i % 2 !== 0 && i > 0) {
+                    numImpare += 1;
+                    p *= i;
+                }
             }
             return p;
         }
@@ -164,6 +162,7 @@
         console.log("9produsImpar", produsImpare(5));
         console.log("9produsImpar", produsImpare(3));
         console.log("9produsImpar", produsImpare(8));
+
 
         //tema 10: O functie "contains" care primeste 2 parametri(arr - array de nr intregi si x - numar) si 
         //         verifica daca x exista in array (rezultatul este true/false)
@@ -259,7 +258,12 @@
         //        (inversul == originalul, ex: "1234321", "55", "787") (true/false)
 
         function palindrom(str) {
-            return str === invers(str);
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] !== str[str.length - 1 - i]) {
+                    return false;
+                }
+            }
+            return true;
         }
 
         console.log("15palindrom", palindrom("121"));
