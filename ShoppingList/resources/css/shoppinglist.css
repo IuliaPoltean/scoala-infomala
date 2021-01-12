@@ -1,0 +1,136 @@
+.title {
+    text-align: center;
+    color: #534e47;
+    background-color: #c9c8c8;
+    max-width: 650px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.background {
+    background-image: url(/ShoppingList/resources/img/shoopingbackground.jpg);
+    background-size: auto;
+}
+
+#formField {
+    background-color: #c9c8c8;
+    max-width: 650px;
+    margin: 0px auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1%; 
+    border-radius: 5px;
+}
+
+.btnAsc {
+    margin-left: 28%;
+}
+
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1.8%;
+    margin-top: 3%;
+}
+
+#addBtn {
+    position: relative;
+    float: right;
+    padding: 10px;
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px #040407;
+}
+
+#addBtn:hover {
+    background-color: #4f60c2;
+    border-color: #353c63;
+}
+
+.btnAsc {
+    padding: 5px;
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px #040407;
+    margin-right: 6.5px;
+}
+
+.btnAsc:hover {
+    background-color: #4f60c2;
+    border-color: #353c63;
+}
+
+.btnDesc {
+    padding: 5px;
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px #040407;
+}
+
+.btnDesc:hover {
+    background-color: #4f60c2;
+    border-color: #353c63;
+}
+
+#listField {
+    background-color: #c9c8c8;
+    overflow: auto;
+    border-radius: 5px;
+    max-width: 650px;
+    margin: 0 auto;
+    height: 100%;
+    margin-top: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.tableField {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.formContent input {
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #303033;
+}
+
+.edit {
+    width: 35px;
+}
+
+.edit:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.lineThrough {
+    text-decoration: line-through;
+}
+
+
+
+

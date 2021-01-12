@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Agenda telefonica</title>
+	<link rel="stylesheet" href="resources/css/agendatelefonica.css">
+</head>
+
+<body class="background" onload="draw();">
+	<h1 class="title">Agenda</h1>
+	<div id="formField">
+		<form class="formContent" onsubmit="event.preventDefault(); saveData();" class="hidden">
+			<div>
+				<label>
+					Nume:<input type="text" name="nume" required onkeypress="onKey(this,event);" />
+				</label>
+				<label>
+					Telefon:<input type="tel" name="telefon" required maxlength="10" />
+				</label>
+			</div>
+			<div>
+				<input id="addBtn" type="submit" value="ADAUGA CONTACT" />
+			</div>
+		</form>
+	</div>
+	<div id="contactField">
+		<table class="tableField">
+			<thead>
+				<tr class="theadField">
+					<th>Nume</th>
+					<th>Telefon</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody class="tbodyField">
+			</tbody>
+		</table>
+	</div>
+
+	<script src="resources/js/agendatelefonica.js"></script>
+
+</body>
+
+</html>

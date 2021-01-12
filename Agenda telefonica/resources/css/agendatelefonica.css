@@ -1,0 +1,97 @@
+.title {
+    text-align: center;
+}
+
+.background {
+    background-color: #cac8c6a6;
+    background-size: auto;
+}
+
+#formField {
+    background-color: #ff8800;
+    box-shadow: 0 0 5px #040407;
+    max-width: 650px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.formContent {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10%;
+    padding: 0.7%;
+    padding-bottom: 4%;
+    margin-top: 3%;
+}
+
+#addBtn {
+    position: relative;
+    float: right;
+    padding: 10px;
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px #040407;
+}
+
+#addBtn:hover {
+    background-color: #4f60c2;
+    border-color: #353c63;
+}
+
+#contactField {
+    background-color: #ff8800;
+    box-shadow: 0 0 5px #040407;
+    overflow: auto;
+    border-radius: 5px;
+    max-width: 650px;
+    margin: 0 auto;
+    height: 100%;
+    margin-top: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.tableField {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.formContent input {
+    border-radius: 5px;
+    padding: 3px;
+    margin: 3px;
+}
+
+.formContent label {
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.1rem;
+}
+
+.edit {
+    width: 35px;
+}
+
+.edit:hover {
+    cursor: pointer;
+}
+
+.delete {
+    width: 35px;
+}
+
+.delete:hover {
+    cursor: pointer;
+}
+
+.theadField {
+    text-align: center;
+}
