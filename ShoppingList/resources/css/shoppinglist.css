@@ -15,7 +15,7 @@
 }
 
 .background {
-    background-image: url(/ShoppingList/resources/img/shoopingbackground.jpg);
+    background-image: url(../img/shoopingbackground.jpg);
     background-size: auto;
 }
 
