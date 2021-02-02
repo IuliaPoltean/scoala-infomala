@@ -1,0 +1,73 @@
+.background {
+    background-color: #353c63;
+}
+
+#searchBar {
+    background-color: #dfe1ee;
+    max-width: 98%;
+    margin: 0px auto;
+    border-radius: 5px;
+}
+
+.forecastBtn, .weatherBtn  {
+    padding: 10px;
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px #040407;
+    margin: 10px;
+    float: right;
+}
+
+.forecastBtn:hover, .weatherBtn:hover {
+    background-color: #4f60c2;
+    border-color: #353c63;
+}
+
+.inputField {
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px #040407;
+    margin: 10px;
+    width: 60%;
+}
+
+.vremeaAcum {
+    background-color: #dfe1ee;
+    max-width: 98%;
+    margin: 0px auto;
+    border-radius: 5px;
+}
+
+.vremeaAcumStyle {
+    padding: 10px;
+    margin: 10px;
+}
+
+.prognoza {
+    background-color: #dfe1ee;
+    max-width: 98%;
+    margin: 0px auto;
+    border-radius: 5px;
+}
+
+.prognozaStyle {
+    padding: 10px;
+    margin: 10px;
+}
+
+.weahterNowColumns{
+    display: flex;
+}
+
+.map {
+    flex:1;
+    padding: 10px;
+}
+
+.hidden {
+    display:none;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Weather App</title>
+
+	<link rel="stylesheet" href="resources/weatherapp.css">
+
+</head>
+
+<body class="background">
+
+	<section id="searchBar">
+		<input class="inputField" id="cityName" type="text" name="city" placeholder="Enter city name here" />
+		<button class="forecastBtn" onclick="prognozaAcum();"> Afiseaza prognoza</button>
+		<button class="weatherBtn" onclick="vremeaAcum();"> Afiseaza vremea</button>
+	</section>
+
+	<div class="vremeaAcum hidden">
+		<div class="vremeaAcumStyle">
+			<div>
+				<h3>Vremea acum</h3>
+				<hr />
+			</div>
+			<div class="vremeaList">
+			</div>
+		</div>
+	</div>
+
+	<div class="prognozaAcum hidden">
+		<div class="prognozaStyle">
+			<div>
+				<h3>Vremea in urmatoarele zile</h3>
+				<hr />
+			</div>
+			<div class="prognozaList">
+				<div class="prognozaDay"></div>
+				<div class="prognozaDay"></div>
+				<div class="prognozaDay"></div>
+				<div class="prognozaDay"></div>
+				<div class="prognozaDay"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="resources/weatherapp.js"></script>
+
+
+
+
+
+</body>
+
+</html>
