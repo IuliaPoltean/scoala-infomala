@@ -25,14 +25,13 @@
     margin: 0px auto;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    row-gap: 1%; 
+    row-gap: 1%;
     border-radius: 5px;
 }
 
 .btnAsc {
     margin-left: 28%;
 }
-
 
 .formContent {
     display: flex;
@@ -130,7 +129,5 @@
 .lineThrough {
     text-decoration: line-through;
 }
-
-
 
 

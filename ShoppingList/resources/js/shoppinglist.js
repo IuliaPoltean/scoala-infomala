@@ -42,7 +42,7 @@ function markAsBuyed(idx) {
     draw();
 }
 
-function compareAsc(a, b) {
+/*function compareAsc(a, b) {
     if (a.item < b.item) {
         return -1;
     }
@@ -69,5 +69,37 @@ function sortAsc() {
 
 function sortDesc() {
     items.sort(compareDesc);
+    draw();
+}
+*/
+
+function compareListAsc(a, b) {
+    if (a.item.toLowerCase() > b.item.toLowerCase()) {
+        return 1;
+    }
+    if (a.item.toLowerCase() < b.item.toLowerCase()) {
+        return -1;
+    }
+    return 0;
+}
+
+function sortAsc() {
+    items.sort(compareListAsc);
+    draw();
+}
+
+function compareListDesc(a, b) {
+    if (a.item.toLowerCase() < b.item.toLowerCase()) {
+        return 1;
+    }
+    if (a.item.toLowerCase() > b.item.toLowerCase()) {
+        return -1;
+    }
+    return 0;
+
+}
+
+function sortDesc() {
+    items.sort(compareListDesc);
     draw();
 }
