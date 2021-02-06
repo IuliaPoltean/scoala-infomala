@@ -47,48 +47,66 @@ async function forecastNow(cityName) {
     const response = await fetch(urlForecastWeather + cityName);
 
     if (response.status != 200) {
-        return alert("BAAAAAA IN ENGLEZA ORASUL!");
+        return alert("Please enter the city name in enlgish");
     }
     forecastDescription = await response.json();
-    drawWeatherForcast(forecastDescription, cityName);
+    drawWeatherForcast(urlForecastWeather, cityName);
 }
 
 function drawWeatherForcast() {
     document.querySelector(".prognozaAcum").classList.remove("hidden");
-    let forecastColumnsStr = ``;
-    let daysArray = [];
 
-    forecastDescription.list?.forEach(element => {
-        const date = new Date(element.dt * 1000);
+    let list = forecastDescription.list;
+    let allDays = document.querySelectorAll(".dayColumn");
+    let idxDay = 0;
+    let currentDate = list[0].dt_txt.substr(0, 10);
 
-        // Construct days
-        let year = date.getFullYear();
-        let month = date.getMonth() < 10 ? "0" + date.getMonth() : date.getMonth();
-        let day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-        let dayString = day + '/' + month + '/' + year;
+    allDays[idxDay].innerHTML = `<div class="date">Ziua: <span>${currentDate}</span></div>`
 
-        if (!daysArray.includes(dayString)) {
-            daysArray.push(dayString);
+    for (let i = 0; i < list.length; i++) {
+        let icon = "http://openweathermap.org/img/w/" + list[i]['weather'][0]['icon'] + ".png";
+        let dateList = list[i].dt_txt.substr(0, 10);
+
+        if (dateList === currentDate) {
+            allDays[idxDay].innerHTML += `
+                <div><img src="${icon}"></span></div>
+                <div>Hour: <span>${list[i].dt_txt.substr(11, 5)}</span></div>
+                <div>Temperature: <span>${list[i].main.temp + " °C"}</span></div>
+                <div>Description: <span>${list[i].weather[0].description}</span></div>`
+        } else {
+            
+            idxDay += 1;
+            currentDate = dateList;
+            allDays[idxDay].innerHTML = `<div class="date">Ziua: <span>${currentDate}</span></div>`
+            i--;
         }
-
-        // Construct forecast items
-        const hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
-        const minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-        let hour = hours + ":" + minutes;
-
-        forecastColumnsStr += `
-            <div class="weatherForecasstColumns">
-                <img id="wicon" src="https://openweathermap.org/img/w/${element.weather[0].icon}.png" alt="Weather icon">
-                <p>Ora: ${hour}</p>
-                <p>Temperatura: ${element.main.temp}</p>
-                <p>Descriere: ${element.weather[0].main}</p>
-            </div>
-            `
-    });
-
-    // Draw forecast items
-    document.querySelector(".prognozaList").innerHTML = forecastColumnsStr;
+    }
 }
+
+    // forecastDescription.list?.forEach(element => {
+    //     const date = new Date(element.dt * 1000);
+
+    //     let allDays = document.querySelectorAll(".dayColumn");
+
+    //     // let day = date.toISOString().substr(0,10);
+    //     // Construct forecast items
+    //     const hours = date.getHours();
+    //     const minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+    //     let hour = hours + ":" + minutes;
+
+    //     forecastData += `
+    //         <div class="weatherForecasstColumns">
+    //             <img id="wicon" src="https://openweathermap.org/img/w/${element.weather[0].icon}.png" alt="Weather icon">
+    //             <p>Ora: ${hour}</p>
+    //             <p>Temperatura: ${element.main.temp}</p>
+    //             <p>Descriere: ${element.weather[0].main}</p>
+    //         </div>
+    //         `
+    // });
+
+    // // Draw forecast items
+    // document.querySelector(".prognozaList").innerHTML = forecastData;
+
 
 async function prognozaAcum() {
     let cityName = document.querySelector("#cityName").value;
