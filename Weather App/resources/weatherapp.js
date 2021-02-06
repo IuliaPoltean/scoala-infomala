@@ -83,31 +83,6 @@ function drawWeatherForcast() {
     }
 }
 
-    // forecastDescription.list?.forEach(element => {
-    //     const date = new Date(element.dt * 1000);
-
-    //     let allDays = document.querySelectorAll(".dayColumn");
-
-    //     // let day = date.toISOString().substr(0,10);
-    //     // Construct forecast items
-    //     const hours = date.getHours();
-    //     const minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-    //     let hour = hours + ":" + minutes;
-
-    //     forecastData += `
-    //         <div class="weatherForecasstColumns">
-    //             <img id="wicon" src="https://openweathermap.org/img/w/${element.weather[0].icon}.png" alt="Weather icon">
-    //             <p>Ora: ${hour}</p>
-    //             <p>Temperatura: ${element.main.temp}</p>
-    //             <p>Descriere: ${element.weather[0].main}</p>
-    //         </div>
-    //         `
-    // });
-
-    // // Draw forecast items
-    // document.querySelector(".prognozaList").innerHTML = forecastData;
-
-
 async function prognozaAcum() {
     let cityName = document.querySelector("#cityName").value;
     await forecastNow(cityName);
