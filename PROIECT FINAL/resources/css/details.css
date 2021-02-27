@@ -1,0 +1,69 @@
+/* =======================================================
+  *
+  * 	Style Index
+  *
+  * ======================================================= */
+  
+  body {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #828282;
+    background: #fff;
+    margin:0;
+    padding: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+.productSlider .swiper-slide img {
+  background-size: cover;
+}
+
+#mwProductGrid {
+  display: grid;  
+  grid-gap: 5px;  
+  grid-template-columns: repeat(auto-fit, 500px);
+  grid-template-rows: repeat(2, 500px);  
+}
+
+#productDetalis {
+  margin-left: 20%;
+  
+}
+.detailContainer {
+  margin-left: 5%;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  border-radius: 2px;
+  padding: 8px 20px;
+  text-decoration: none;
+  background: transparent;
+  color: #d1c286;
+}
+
+.btnAddToCart {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  border-radius: 2px;
+  padding: 8px 20px;
+  text-decoration: none;
+  background: transparent;
+  color: #d1c286;
+  border: 2px solid #d1c286;
+}
+
+.btnAddToCart:hover,
+.btnAddToCart:focus,
+.btnAddToCart:active {
+  background: #d8cb98 !important;
+  border-color: #d8cb98 !important;
+  color: white;
+}
