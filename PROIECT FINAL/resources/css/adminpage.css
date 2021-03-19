@@ -193,6 +193,7 @@ tbody tr:nth-child(odd) {
   tr {
     display: grid;
     justify-content: space-evenly;
+    margin-bottom: 10%;
   }
 
   td {
@@ -201,7 +202,7 @@ tbody tr:nth-child(odd) {
 
   table {
     margin: auto;
-    width: 50%;
+    width: 100%;
   }
 
   .stockColumn {

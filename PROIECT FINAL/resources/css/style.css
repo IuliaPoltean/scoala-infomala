@@ -196,6 +196,13 @@ ul {
     flex-direction: row;
     justify-content: flex-end;
   }
+
+  .mwNav .menu-2 li input[type="text"] {
+    padding: 3px 0px;
+    width: 40%;
+    border: none;
+    float: right;
+  }
 }
 
 /* Hamburger button */

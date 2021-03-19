@@ -64,7 +64,6 @@ body {
 .detailContainer {
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 400;
-  border-radius: 2px;
   padding: 8px 20px;
   text-decoration: none;
   background: transparent;
@@ -144,19 +143,19 @@ body {
   margin-right: 5px;
 }
 
-/* Line through if out of stock*/ 
+/* Line through if out of stock*/
 
 .lineThrough {
   text-decoration: line-through;
-  color: #d0d4da!important;
-  transition: none!important;
-  cursor: not-allowed!important;
+  color: #d0d4da !important;
+  transition: none !important;
+  cursor: not-allowed !important;
 }
 
 .lineThrough:hover,
 .lineThrough:active,
 .lineThrough:focus {
-  border: 2px solid transparent!important;
+  border: 2px solid transparent !important;
 }
 
 /* Input Type Number Plus Minus Buttons */
@@ -250,27 +249,82 @@ body {
 }
 
 @-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
   #productDetalis {
     text-align: center;
+  }
+}
+
+/* Mobile CSS */
+
+@media screen and (max-width: 768px) {
+  #mwProductGrid {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .swiper-wrapper > div > img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+  }
+
+  .productDescription .name {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .swiper-wrapper > div > img {
+    width: 65%;
+    height: 65%;
+    object-fit: cover;
+  }
+
+  .productDescription p {
+    padding-left: 20%;
+    padding-right: 20%;
   }
 }
