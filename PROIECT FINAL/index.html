@@ -3,53 +3,44 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Maskworkouts </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel='icon' href='resources/images/faviconlogo.png' type='image/x-icon'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="resources/css/style.css">
+	<!-- Loading CSS  -->
+	<link rel="stylesheet" href="resources/css/loading.css">
 
 	<!-- Swiper Home Page  -->
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="resources/css/swiperhomepage.css" />
 
-	<!-- Animation CSS  -->
-	<link rel="stylesheet" href="resources/css/animate.css">
-
-	<!-- Loading CSS  -->
-	<link rel="stylesheet" href="resources/css/loading.css">
-
-
-
-
-
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="resources/css/style.css">
 
 </head>
 
-<body>
+<body onload="getProductsToFrontend()">
 
-	<div class="mwLoader"></div>
+	<div id="loading" class="lds-ripple"><div></div><div></div></div>
 
 	<div id="page">
 		<nav class="mwNav" role="navigation">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 col-xs-2">
-						<div id="mwLogo"><a href=#><img src="resources/images/logo.svg"></a> </div>
+						<div id="mwLogo"><a href="index.html"><img src="resources/images/logo.svg"></a> </div>
 					</div>
 					<button class="hamburger" id="hamburger"><i class="fa fa-bars"></i></button>
-					<div class="col-md-6 col-xs-6 textCenter navUl menu-1" id="navUl">
+					<div class="col-md-6 col-xs-6 textCenter navUl menu-1" id="navUlLeft">
 						<ul>
-							<li><a href="product.html">Shop</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="index.html">Shop</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
 						</ul>
 					</div>
-					<div class="col-md-3 col-xs-4 text-right navUl menu-2" id="navUl">
+					<div class="col-md-3 col-xs-4 text-right navUl menu-2" id="navUlRight">
 						<ul>
 							<li class="search">
 								<div class="inputGroup">
@@ -57,22 +48,22 @@
 								</div>
 							</li>
 							<li><button class="searchBtn" type="button"><i class="fa fa-search"></i></button></li>
-							<li><button class="shopping-cart" type="button"><i
-										class="fa fa-shopping-cart"></i></button><span><small>0</small></span></li>
-							<li><button class="adminBtn" type="button"><i class="fa fa-lock"></i></button></li>
+							<li><a href="shoppingcart.html"><button class="shopping-cart" type="button"><i
+										class="fa fa-shopping-cart"></i></button><span><small id="stockCounter">0</small></span></a></li>
+							<li><a class="adminBtn" type="button" href="adminpage.html"><i class="fa fa-lock"></i></a>
+							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</nav>
-
 		<!-- Slider main container -->
 		<div class="swiper-container">
 			<!-- Additional required wrapper -->
 			<div class="swiper-wrapper">
 				<!-- Slides -->
-				<div class="swiper-slide"><img src="resources/images/slide1.jpg" /></div>
 				<div class="swiper-slide"><img src="resources/images/slide2.jpg" /></div>
+				<div class="swiper-slide"><img src="resources/images/slide1.jpg" /></div>
 				<div class="swiper-slide"><img src="resources/images/slide3.jpg" /></div>
 
 			</div>
@@ -89,9 +80,7 @@
 				<div class="row">
 					<div class="col-md-4 col-sm-4 textCenter">
 						<div class="featureCenter animate-box" data-animate-effect="fadeIn">
-							<span class="icon">
-								<i class="icon-credit-card"></i>
-							</span>
+
 							<h3>Credit Card</h3>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
 								there live the blind texts. Separated they live in Bookmarksgrove</p>
@@ -100,9 +89,7 @@
 					</div>
 					<div class="col-md-4 col-sm-4 textCenter">
 						<div class="featureCenter animate-box" data-animate-effect="fadeIn">
-							<span class="icon">
-								<i class="icon-wallet"></i>
-							</span>
+
 							<h3>Save Money</h3>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
 								there live the blind texts. Separated they live in Bookmarksgrove</p>
@@ -111,9 +98,7 @@
 					</div>
 					<div class="col-md-4 col-sm-4 textCenter">
 						<div class="featureCenter animate-box" data-animate-effect="fadeIn">
-							<span class="icon">
-								<i class="icon-paper-plane"></i>
-							</span>
+
 							<h3>Free Delivery</h3>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
 								there live the blind texts. Separated they live in Bookmarksgrove</p>
@@ -124,9 +109,6 @@
 			</div>
 		</div>
 
-
-
-
 		<div id="mwProduct">
 			<div class="container">
 				<div class="row animate-box">
@@ -134,105 +116,9 @@
 						<h2 class="ourProducts">OUR PRODUCTS</h2>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-4 textCenter animate-box">
-						<div class="product">
-							<div class="productGrid">
-								<div class="productImages"><img src="resources/images/Top1.jpg" /></div>
-								<div class="overlay">
-									<a href="#" class="icon" title="User Profile">
-									  <i class="fa fa-eye"></i>
-									</a>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="single.html">Sports Bra Summer Days</a></h3>
-								<span class="price">$50</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 textCenter animate-box">
-						<div class="product">
-							<div class="productGrid">
-								<div class="productImages"><img src="resources/images/Top2.jpg" /></div>
-								<div class="overlay">
-									<a href="#" class="icon" title="User Profile">
-									  <i class="fa fa-eye"></i>
-									</a>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="single.html">Sports Bra Sexy Top</a></h3>
-								<span class="price">$65</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 textCenter animate-box">
-						<div class="product">
-							<div class="productGrid">
-								<div class="productImages"><img src="resources/images/Top3.jpg" /></div>
-								<div class="overlay">
-									<a href="#" class="icon" title="User Profile">
-									  <i class="fa fa-eye"></i>
-									</a>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="single.html">Sports Bra Seamleess Layer</a></h3>
-								<span class="price">$780</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 textCenter animate-box">
-						<div class="product">
-							<div class="productGrid">
-								<div class="productImages"><img src="resources/images/Tights1.jpg" /></div>
-								<div class="overlay">
-									<a href="#" class="icon" title="User Profile">
-									  <i class="fa fa-eye"></i>
-									</a>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="single.html">Tights Captain</a></h3>
-								<span class="price">$80</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 textCenter animate-box">
-						<div class="product">
-							<div class="productGrid">
-								<div class="productImages"><img src="resources/images/Tights2.jpg" /></div>
-								<div class="overlay">
-									<a href="#" class="icon" title="User Profile">
-									  <i class="fa fa-eye"></i>
-									</a>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="single.html">Thights Seamless </a></h3>
-								<span class="price">$100</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 textCenter animate-box">
-						<div class="product">
-							<div class="productGrid">
-								<div class="productImages"><img src="resources/images/Tights3.jpg" /></div>
-								<div class="overlay">
-									<a href="#" class="icon" title="User Profile">
-									  <i class="fa fa-eye"></i>
-									</a>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="single.html">Tights Seamless Layer</a></h3>
-								<span class="price">$135</span>
-							</div>
-						</div>
-					</div>
+
+				<div class="gridContainer">
+					<!-- Product list is drawn here -->
 				</div>
 			</div>
 		</div>
@@ -255,7 +141,7 @@
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6">
-								<button type="submit" class="btn btn-default btn-block">Subscribe</button>
+								<button type="submit" class="btn btnSubscribe">Subscribe</button>
 							</div>
 						</form>
 					</div>
@@ -265,13 +151,15 @@
 
 		<footer id="mwFooter" role="contentInfo">
 			<div class="container">
-				<div class="row row-pb-md">
+				<div class="row row-pb-md grid">
+					
 					<div class="col-md-4 mw-widget">
 						<h3>MaskWorkouts.</h3>
 						<p>Join our family! Workout with us and be a part of our community!
 							We created this line of sportswear for you to have the best and
 							effective workout gear!</p>
 					</div>
+
 					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
 						<ul class="mwFooterLinks">
 							<li><a href="#">About</a></li>
@@ -289,15 +177,6 @@
 							<li><a href="#">Testimonials</a></li>
 							<li><a href="#">Handbook</a></li>
 							<li><a href="#">Held Desk</a></li>
-						</ul>
-					</div>
-
-					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-						<ul class="mwFooterLinks">
-							<li><a href="#">Find Workouts</a></li>
-							<li><a href="#">Find Healthy Recipes</a></li>
-							<li><a href="#">Find Teams</a></li>
-							<li><a href="#">Advertise</a></li>
 						</ul>
 					</div>
 				</div>
@@ -324,6 +203,8 @@
 			</div>
 		</footer>
 
+		<!-- Loading animation -->
+		<script src="resources/js/loading.js"></script>
 
 		<!-- Swiper Home Page  -->
 		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
@@ -333,9 +214,12 @@
 		<!-- Main -->
 		<script src="resources/js/main.js"></script>
 
+		<!-- Search -->
+		<script src="resources/js/searchfunction.js"></script>
 
+		<!-- Function recalculateCartCounter -->
+		<script src="resources/js/recalculateCartCounter.js"></script>
 
 </body>
-
 
 </html>

@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>MW Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' href='resources/images/faviconlogo.png' type='image/x-icon'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Loading CSS  -->
+    <link rel="stylesheet" href="resources/css/loading.css">
+
+    <!-- Admin Page  -->
+    <link rel="stylesheet" href="resources/css/adminpage.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="resources/css/style.css">
+
+</head>
+
+<body onload="getProducts()">
+
+	<div id="loading" class="lds-ripple"><div></div><div></div></div>
+
+    <div id="page">
+        <nav class="mwNav" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-xs-2">
+						<div id="mwLogo"><a href="index.html"><img src="resources/images/logo.svg"></a> </div>
+					</div>
+					<button class="hamburger" id="hamburger"><i class="fa fa-bars"></i></button>
+					<div class="col-md-6 col-xs-6 textCenter navUl menu-1" id="navUlLeft">
+						<ul>
+							<li><a href="index.html">Shop</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-xs-4 text-right navUl menu-2" id="navUlRight">
+						<ul>
+							<li class="search">
+								<div class="inputGroup">
+									<input class="inputSearch" type="text" placeholder="Search...">
+								</div>
+							</li>
+							<li><button class="searchBtn" type="button"><i class="fa fa-search"></i></button></li>
+							<li><a href="shoppingcart.html"><button class="shopping-cart" type="button"><i
+										class="fa fa-shopping-cart"></i></button><span><small id="stockCounter">0</small></span></a></li>
+							<li><a class="adminBtn" type="button" href="adminpage.html"><i class="fa fa-lock"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+        <section id="admin">
+            <div class="adminContent" id="productListingContainer">
+                <div class="titleAndButton">
+                    <div class="title">
+                        <h1>Product Management</h1>
+                    </div>
+                    <div><button class="btnAddNewProduct" onclick="showCreateForm()">ADD NEW PRODUCT</button></div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Picture</th>
+                            <th>Product name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Product stock</th>
+                            <th>Product Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productList">
+                        <!-- Here is the produsctList drawn  -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="formAddProduct" class="adminAddProduct hidden">
+                <div class="titleAndTwoButtons">
+                    <div class="addPage">
+                        <h1 id="formTitle">Add Product</h1>
+                    </div>
+                    <div>
+                        <input class="addEditButtons" id="saveBtn" type="button" onclick="" value="SAVE" />
+                        <input class="addEditButtons" id="cancelBtn" type="button" onclick="cancel();" value="CANCEL" />
+                    </div>
+                </div>
+                <form class="adminInputContent" onsubmit="event.preventDefault();">
+                    <div class="productDescriptionForm">
+                        <p>
+                            <label>Picture</label>
+                            <input type="text" name="image" />
+                        </p>
+                        <p>
+                            <label>Product name</label>
+                            <input type="text" name="name" />
+                        </p>
+                        <p class="alignTextarea">
+                            <label>Description</label>
+                            <textarea name="description"></textarea>
+                        </p>
+                        <p>
+                            <label>Price</label>
+                            <input type="text" name="price" />
+                        </p>
+                    </div>
+                    <div class="stockForm">
+                        <div><label>Stock</label></div>
+                        <div>
+                            <p>
+                                <label>XS:</label>
+                                <input requried type="text" name="stock-xs" />
+                            </p>
+                            <p>
+                                <label>S:</label>
+                                <input requried type="text" name="stock-s" />
+                            </p>
+                            <p>
+                                <label>M:</label>
+                                <input requried type="text" name="stock-m" />
+                            </p>
+                            <p>
+                                <label>L:</label>
+                                <input requried type="text" name="stock-l" />
+                            </p>
+                            <p>
+                                <label>XL:</label>
+                                <input requried type="text" name="stock-xl" />
+                            </p>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <footer id="mwFooter" role="contentInfo">
+            <div class="container">
+                <div class="row row-pb-md grid">
+
+                    <div class="col-md-4 mw-widget">
+                        <h3>MaskWorkouts.</h3>
+                        <p>Join our family! Workout with us and be a part of our community!
+                            We created this line of sportswear for you to have the best and
+                            effective workout gear!</p>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                        <ul class="mwFooterLinks">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Meetups</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                        <ul class="mwFooterLinks">
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Handbook</a></li>
+                            <li><a href="#">Held Desk</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row copyright">
+                    <div class="col-md-12 textCenter">
+                        <p>
+                            <small class="block">&copy; 2021 MaskWorkouts. All Rights Reserved.</small>
+                            <small class="block">Designed by MaskWorkouts</a> Demo Images: <a
+                                    href="https://alalastyle.com/" target="_blank">Alala</a> &amp; <a
+                                    href="http://unsplash.co/" target="_blank">MaskWorkouts</a></small>
+                        </p>
+                        <p>
+                        <ul class="mw-social-icons">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+		<!-- Loading animation -->
+		<script src="resources/js/loading.js"></script>
+
+        <!-- Admin Page -->
+        <script src="resources/js/adminpage.js"></script>
+
+        <!-- Function recalculateCartCounter -->
+		<script src="resources/js/recalculateCartCounter.js"></script>
+
+</body>
+
+</html>

@@ -3,56 +3,51 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Maskworkouts </title>
+	<title>Maskworkouts Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel='icon' href='resources/images/faviconlogo.png' type='image/x-icon'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="resources/css/style.css">
 
 	<!-- Swiper Home Page  -->
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="resources/css/swiperhomepage.css" />
 
-	<!-- Animation CSS  -->
-	<link rel="stylesheet" href="resources/css/animate.css">
-
 	<!-- Loading CSS  -->
 	<link rel="stylesheet" href="resources/css/loading.css">
 
-	<!-- Loading CSS  -->
+	<!-- Quantity Box  -->
+	<script data-require="jquery@3.1.1" data-semver="3.1.1"
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="resources/css/style.css">
+
+	<!-- Details Page  -->
 	<link rel="stylesheet" href="resources/css/details.css">
-
-
-
-
-
 
 </head>
 
-<body>
+<body onload="frontendDetailsDraw()">
 
-	<div class="mwLoader"></div>
+	<div id="loading" class="lds-ripple"><div></div><div></div></div>
 
 	<div id="page">
 		<nav class="mwNav" role="navigation">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 col-xs-2">
-						<div id="mwLogo"><a href=#><img src="resources/images/logo.svg"></a> </div>
+						<div id="mwLogo"><a href="index.html"><img src="resources/images/logo.svg"></a> </div>
 					</div>
 					<button class="hamburger" id="hamburger"><i class="fa fa-bars"></i></button>
-					<div class="col-md-6 col-xs-6 textCenter navUl menu-1" id="navUl">
+					<div class="col-md-6 col-xs-6 textCenter navUl menu-1" id="navUlLeft">
 						<ul>
-							<li><a href="product.html">Shop</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="index.html">Shop</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
 						</ul>
 					</div>
-					<div class="col-md-3 col-xs-4 text-right navUl menu-2" id="navUl">
+					<div class="col-md-3 col-xs-4 text-right navUl menu-2" id="navUlRight">
 						<ul>
 							<li class="search">
 								<div class="inputGroup">
@@ -60,145 +55,139 @@
 								</div>
 							</li>
 							<li><button class="searchBtn" type="button"><i class="fa fa-search"></i></button></li>
-							<li><button class="shopping-cart" type="button"><i
-										class="fa fa-shopping-cart"></i></button><span><small>0</small></span></li>
-							<li><button class="adminBtn" type="button"><i class="fa fa-lock"></i></button></li>
+							<li><a href="shoppingcart.html"><button class="shopping-cart" type="button"><i
+										class="fa fa-shopping-cart"></i></button><span><small id="stockCounter">0</small></span></a></li>
+							<li><a class="adminBtn" type="button" href="adminpage.html"><i class="fa fa-lock"></i></a>
+							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</nav>
 
-
-		<div id="productDetalis"> 
+		<div id="productDetalis">
 			<div id="mwProductGrid">
 				<div class="productSlider">
 					<!-- Slider main container -->
 					<div class="swiper-container">
-	
+
 						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
 							<!-- Slides -->
-							<div class="swiper-slide"><img src="resources/images/Top1.jpg" /></div>
-							<div class="swiper-slide"><img src="resources/images/Top1-1.jpg" /></div>
-							<div class="swiper-slide"><img src="resources/images/Top1-2.jpg" /></div>
-	
 						</div>
-	
+
 						<!-- If we need pagination -->
 						<div class="swiper-pagination"></div>
-	
+
 						<!-- If we need navigation buttons -->
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
 					</div>
 				</div>
-	
+
 				<div class="detailContainer">
-					<h3><a href="single.html">Sports Bra Sexy Top</a></h3>
-					<span class="price">$65</span>
-					<p class="stoc">In stock: 35 items</p>
-					<form method="post">
-						<input type="hidden" name="add_to_cart" value="1">
-						<input type="hidden" name="product" value="123">
-						
-						<label for="add-quantity">Quantity:</label>
-						<input type="number" name="quantity" value="1">
-						<br />
-						<input type="submit" class="btnAddToCart" value="ADD TO CART">
-					</form>
-					   
+					<div class="productDescription">
+						<h1 class="name"></h1>
+						<p class="price">&#36;<!--dollarsign--></p>
+						<p class="description"></p>
+					</div>
+
+					<div class="productConfiguration">
+						<div class="sizeChoose">
+							<!-- Size list is drawn here -->
+						</div>
+					</div>
+
+					<!-- Form Configuration -->
+					<div class="formConfig">
+						<form class="formContent" onsubmit="return false;">
+							<div class="quantity buttons_added">
+								<label for="add-quantity">Quantity:</label>
+								<input type="button" value="-" class="minus"><input type="number" step="1" min="1"
+									max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"
+									pattern="" inputmode="" id="quantity"><input type="button" value="+" class="plus">
+							</div>
+							<br />
+							<input onclick="addToCart();" type="submit" class="btnAddToCart" value="ADD TO CART">
+							<div id="toastMessageAddToCart">Product was added to cart</div>
+						</form>
+					</div>
+
 				</div>
 			</div>
 		</div>
 
+		<footer id="mwFooter" role="contentInfo">
+			<div class="container">
+				<div class="row row-pb-md grid">
 
-
-
-
-
-			<footer id="mwFooter" role="contentInfo">
-				<div class="container">
-					<div class="row row-pb-md">
-						<div class="col-md-4 mw-widget">
-							<h3>MaskWorkouts.</h3>
-							<p>Join our family! Workout with us and be a part of our community!
-								We created this line of sportswear for you to have the best and
-								effective workout gear!</p>
-						</div>
-						<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-							<ul class="mwFooterLinks">
-								<li><a href="#">About</a></li>
-								<li><a href="#">Help</a></li>
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">Terms</a></li>
-								<li><a href="#">Meetups</a></li>
-							</ul>
-						</div>
-
-						<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-							<ul class="mwFooterLinks">
-								<li><a href="#">Shop</a></li>
-								<li><a href="#">Privacy</a></li>
-								<li><a href="#">Testimonials</a></li>
-								<li><a href="#">Handbook</a></li>
-								<li><a href="#">Held Desk</a></li>
-							</ul>
-						</div>
-
-						<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-							<ul class="mwFooterLinks">
-								<li><a href="#">Find Workouts</a></li>
-								<li><a href="#">Find Healthy Recipes</a></li>
-								<li><a href="#">Find Teams</a></li>
-								<li><a href="#">Advertise</a></li>
-							</ul>
-						</div>
+					<div class="col-md-4 mw-widget">
+						<h3>MaskWorkouts.</h3>
+						<p>Join our family! Workout with us and be a part of our community!
+							We created this line of sportswear for you to have the best and
+							effective workout gear!</p>
 					</div>
 
-					<div class="row copyright">
-						<div class="col-md-12 text-center">
-							<p>
-								<small class="block">&copy; 2021 MaskWorkouts. All Rights Reserved.</small>
-								<small class="block">Designed by MaskWorkouts</a> Demo Images: <a
-										href="https://alalastyle.com/" target="_blank">Alala</a> &amp; <a
-										href="http://unsplash.co/" target="_blank">MaskWorkouts</a></small>
-							</p>
-							<p>
-							<ul class="mw-social-icons">
-								<li><a href="#"><i class="icon-twitter"></i></a></li>
-								<li><a href="#"><i class="icon-facebook"></i></a></li>
-								<li><a href="#"><i class="icon-linkedin"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							</ul>
-							</p>
-						</div>
+					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+						<ul class="mwFooterLinks">
+							<li><a href="#">About</a></li>
+							<li><a href="#">Help</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Terms</a></li>
+							<li><a href="#">Meetups</a></li>
+						</ul>
 					</div>
 
+					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+						<ul class="mwFooterLinks">
+							<li><a href="#">Shop</a></li>
+							<li><a href="#">Privacy</a></li>
+							<li><a href="#">Testimonials</a></li>
+							<li><a href="#">Handbook</a></li>
+							<li><a href="#">Held Desk</a></li>
+						</ul>
+					</div>
 				</div>
-			</footer>
 
-			<!--let cosStr = localStorage.getItem("cos");
-			let cos = [];
-			if(cosStr!==null){
-				cos = JSON.parse(cosStr);
-			}
-			cos.push({produs:2,cantitate:7});
-			localStorage.setItem("cos", JSON.stringify(cos));
-			-->			
+				<div class="row copyright">
+					<div class="col-md-12 textCenter">
+						<p>
+							<small class="block">&copy; 2021 MaskWorkouts. All Rights Reserved.</small>
+							<small class="block">Designed by MaskWorkouts</a> Demo Images: <a
+									href="https://alalastyle.com/" target="_blank">Alala</a> &amp; <a
+									href="http://unsplash.co/" target="_blank">MaskWorkouts</a></small>
+						</p>
+						<p>
+						<ul class="mw-social-icons">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+						</p>
+					</div>
+				</div>
 
+			</div>
+		</footer>
 
-			<!-- Swiper Home Page  -->
-			<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-			<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-			<script src="resources/js/swiperhomepage.js"></script>
+		<!-- Loading animation -->
+		<script src="resources/js/loading.js"></script>
 
-			<!-- Main -->
-			<script src="resources/js/main.js"></script>
+		<!-- Swiper Home Page  -->
+		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<script src="resources/js/swiperhomepage.js"></script>
 
+		<!-- Main -->
+		<script src="resources/js/main.js"></script>
 
+		<!-- Details Page -->
+		<script src="resources/js/detailspage.js"></script>
+
+		<!-- Function recalculateCartCounter -->
+		<script src="resources/js/recalculateCartCounter.js"></script>
 
 </body>
-
 
 </html>

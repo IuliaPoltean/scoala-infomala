@@ -3,7 +3,26 @@
   * 	Style Index
   *
   * ======================================================= */
-  
+
+  /*Loading CSS*/
+.lds-ripple div {
+  border-color: #ffffff;
+  background:#ffffff;
+  background-color: #adadad;
+  background-color: rgba(158, 158, 158, 0.7);
+}
+#loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  z-index: 10;
+}
+
 body {
   font-family: "Playfair Display", serif;
   font-weight: 400;
@@ -11,10 +30,9 @@ body {
   line-height: 1.7;
   color: #828282;
   background: #fff;
-  margin:0;
+  margin: 0;
   padding: 0;
 }
-
 #page {
   position: relative;
   overflow-x: hidden;
@@ -30,7 +48,7 @@ body {
   padding: 15px 0;
   background: #fff;
   margin-left: 5%;
-  margin-right:5%;
+  margin-right: 5%;
 }
 
 .mwNav #mwLogo {
@@ -43,65 +61,13 @@ body {
   color: #000;
 }
 
-/*.mwNav .icon {
-  display: none;
-}*/
-
-/* Mobile CSS */
-
-@media screen and (max-width: 768px) {
-  .mwNav .menu-1, .mwNav .menu-2 {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .navUl ul {
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-end;
-  }
-
-  .navUl.show {
-    display: flex;
-  }
-
-  .mwNav .hamburger {
-    display:block;
-  } 
-
-  .featureCenter {
-    margin-bottom: 50px;
-  }
-
-  .product .productGrid .inner {
-    opacity: 1;
-    background: transparent;
-  }
-
-  #mwServices .container .row {  
-    display: grid;  
-    row-gap: 5%;
-    margin-left: 15%;
-    margin-right:15%;
-  }
-
-  #mwProduct .container .row {  
-    display: grid;  
-  }
-
-  #mwProduct .container .row .textCenter {  
-    margin-bottom: 15%; 
-  }
-
-
-
-  
+.show {
+  display: flex !important;
 }
 
-/*Tablet CSS*/ 
-
-
+.hidden {
+  display: none !important;
+}
 
 .mwNav ul li a:hover,
 .mwNav ul li a:focus,
@@ -168,7 +134,7 @@ ul {
 
 .mwNav .menu-2 li button:hover,
 .mwNav .menu-2 li button:focus {
-  background: transparent !important;
+  background: transparent;
 }
 
 .mwNav .menu-2 li button:hover i,
@@ -184,6 +150,52 @@ ul {
   border-radius: 50%;
   background: rgb(0, 0, 0);
   color: white;
+}
+
+/* Mobile CSS */
+
+@media screen and (max-width: 768px) {
+  .mwNav .menu-1,
+  .mwNav .menu-2 {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navUl ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+  }
+
+  .navUl.show {
+    display: flex;
+  }
+
+  .mwNav .hamburger {
+    display: block;
+  }
+
+  .featureCenter {
+    margin-bottom: 50px;
+  }
+
+  .product .productGrid .inner {
+    opacity: 1;
+    background: transparent;
+  }
+
+  #mwServices .container .row {
+    display: grid;
+    row-gap: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  #navUlRight ul {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }
 
 /* Hamburger button */
@@ -267,9 +279,14 @@ div .textCenter {
 .btnPrimary:hover,
 .btnPrimary:focus,
 .btnPrimary:active {
-  background: #d8cb98 !important;
-  border-color: #d8cb98 !important;
+  background: #d8cb98;
+  border-color: #d8cb98;
   color: white;
+  cursor: pointer;
+}
+
+#mwProduct {
+  margin-bottom: 8%;
 }
 
 .productImages img {
@@ -279,7 +296,14 @@ div .textCenter {
   align-content: center;
 }
 
-
+.gridContainer {
+  display: grid;
+  grid-row-gap: 100px;
+  grid-column-gap: 2%;
+  grid-template-columns: repeat(auto-fit, 350px);
+  grid-template-rows: repeat(1, 350px);
+  justify-content: space-evenly;
+}
 
 .product .productGrid .inner p .icon {
   padding: 7px 10px;
@@ -293,27 +317,11 @@ div .textCenter {
   background-repeat: no-repeat;
   position: relative;
   height: 350px;
-  margin-bottom: 20px;
 }
-
-/*.container > .row {
-  display: flex;
-}*/
 
 .container {
   max-width: 1200px;
   margin: auto;
-}
-
-.product .productGrid {
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
-  height: 350px;
-  margin-bottom: 20px;
-  width: 100%;
-  padding-bottom: 30%;
 }
 
 .product .desc h3 {
@@ -331,10 +339,6 @@ div .textCenter {
 
 .product .desc {
   text-align: center;
-}
-
-.product {
-  margin-bottom: 10%;
 }
 
 a {
@@ -360,13 +364,11 @@ a {
 .product .productGrid .inner p .icon {
   padding: 7px 10px;
   color: #fff;
-  background: #d1c286;
 }
 
 .product .productGrid .inner p .icon:hover,
 .product .productGrid .inner p .icon:focus {
   color: #d1c286;
-  background: #fff;
 }
 
 .overlay {
@@ -378,7 +380,7 @@ a {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .3s ease;
+  transition: 0.3s ease;
   background-color: rgb(0, 0, 0);
 }
 
@@ -395,13 +397,8 @@ a {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
-  padding: 5px 12px;
+  padding: 45%;
   color: #fff;
-  background: #d1c286;
-}
-
-.icon:hover {
-  background: white;
 }
 
 .fa-eye:hover {
@@ -418,7 +415,7 @@ a {
 #mwNewsletter .mwHeading h2 {
   font-family: "Montserrat", Arial, sans-serif;
   color: #fff;
-  margin-bottom: 20px !important;
+  margin-bottom: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
@@ -427,7 +424,7 @@ a {
 #mwNewsletter .mwHeading p {
   font-family: "Montserrat", Arial, sans-serif;
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 20px !important;
+  margin-bottom: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
@@ -435,15 +432,16 @@ a {
 
 #mwNewsletter .formControl {
   background: rgba(255, 255, 255, 0.2);
-  border: none !important;
+  border: none;
   color: #fff;
-  font-size: 16px !important;
+  font-size: 16px;
   width: 100%;
 }
 
-#mwNewsletter .formInline  {
+#mwNewsletter .formInline {
   display: flex;
   justify-content: space-between;
+  padding-left: 1%;
 }
 
 #mwNewsletter button {
@@ -461,7 +459,7 @@ a {
 
 #mwNewsletter .btn {
   height: 54px;
-  border: none !important;
+  border: none;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   font-size: 16px;
@@ -469,13 +467,28 @@ a {
   font-weight: 400;
   padding-left: 50px;
   padding-right: 50px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #mwNewsletter .formInline {
+    display: grid;
+    grid-row-gap: 10%;
+    justify-items: center;
+  }
+
+  #mwNewsletter button {
+    margin-left: 0px;
+  }
 }
 
 /* Footer Style */
 
 #mwFooter {
   background: #efefef;
-  max-width: ;
+  max-width: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 #mwFooter .copyright .block {
@@ -499,3 +512,27 @@ a {
   list-style-type: none;
 }
 
+#mwFooter ul a {
+  color: #828282;
+}
+
+#mwFooter .container {
+  max-width: 1200px;
+  align-content: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  #mwFooter .grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
+  }
+
+  #mwFooter .container {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}

@@ -9,8 +9,13 @@
   background-size: cover;
 }
 
-@media screen and (min-width: 768px) {
-  .swiper-slide img {
-    object-fit: cover;
-  }
+.swiper-wrapper {
+  position: relative;
 }
+
+.swiper-wrapper > div > img {  
+  width: 100%;  
+  height: 100%;  
+  object-fit: cover;  
+}
+
