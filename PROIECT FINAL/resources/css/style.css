@@ -4,10 +4,10 @@
   *
   * ======================================================= */
 
-  /*Loading CSS*/
+/*Loading CSS*/
 .lds-ripple div {
   border-color: #ffffff;
-  background:#ffffff;
+  background: #ffffff;
   background-color: #adadad;
   background-color: rgba(158, 158, 158, 0.7);
 }
@@ -203,6 +203,11 @@ ul {
     border: none;
     float: right;
   }
+
+  .mwNav ul li a {
+    padding: 0px 0px;
+  }
+  
 }
 
 /* Hamburger button */
