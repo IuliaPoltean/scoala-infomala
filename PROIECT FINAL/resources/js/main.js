@@ -1,14 +1,3 @@
-//Hambuerger Menu
-
-const hamburger = document.getElementById('hamburger');
-const navUlLeft = document.getElementById('navUlLeft');
-const navUlRight = document.getElementById('navUlRight');
-
-hamburger.addEventListener('click', () => {
-	navUlLeft.classList.toggle('show');
-	navUlRight.classList.toggle('show');
-});
-
 // Adding the products to the home page
 
 let url = "https://final-project-1edb8-default-rtdb.firebaseio.com/products/"
