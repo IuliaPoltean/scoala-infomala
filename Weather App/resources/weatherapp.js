@@ -19,12 +19,12 @@ function drawWeatherNow(weatherDescription, cityName) {
     <div class="weahterNowColumns">
         <div>
             <img id="wicon" src="https://openweathermap.org/img/w/${weatherDescription?.weather[0].icon}.png" alt="Weather icon">
-            <p>Descriere: ${weatherDescription?.weather[0].main}</p>
-            <p>Umiditate: ${weatherDescription?.main.humidity} %</p>
-            <p>Presiune: ${weatherDescription?.main.pressure} mmHg</p>
-            <p>Temperatura curenta: ${weatherDescription?.main.temp} °C</p>
-            <p>Minima zilei: ${weatherDescription?.main.temp_min} °C</p>
-            <p>Maxima zilei: ${weatherDescription?.main.temp_max} °C</p>
+            <p>Description: ${weatherDescription?.weather[0].main}</p>
+            <p>Humidity: ${weatherDescription?.main.humidity} %</p>
+            <p>Pressure: ${weatherDescription?.main.pressure} mmHg</p>
+            <p>Current Temperature: ${weatherDescription?.main.temp} °C</p>
+            <p>Min Temperature: ${weatherDescription?.main.temp_min} °C</p>
+            <p>Max Temperature: ${weatherDescription?.main.temp_max} °C</p>
         </div>
         <div class="map">
         <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=${cityName}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ></iframe>
@@ -61,7 +61,7 @@ function drawWeatherForcast() {
     let idxDay = 0;
     let currentDate = list[0].dt_txt.substr(0, 10);
 
-    allDays[idxDay].innerHTML = `<div class="date">Ziua: <span>${currentDate}</span></div>`
+    allDays[idxDay].innerHTML = `<div class="date">Day: <span>${currentDate}</span></div>`
 
     for (let i = 0; i < list.length; i++) {
         let icon = "http://openweathermap.org/img/w/" + list[i]['weather'][0]['icon'] + ".png";
@@ -77,7 +77,7 @@ function drawWeatherForcast() {
             
             idxDay += 1;
             currentDate = dateList;
-            allDays[idxDay].innerHTML = `<div class="date">Ziua: <span>${currentDate}</span></div>`
+            allDays[idxDay].innerHTML = `<div class="date">Day: <span>${currentDate}</span></div>`
             i--;
         }
     }
